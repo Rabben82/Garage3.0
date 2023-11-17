@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Garage.Core.Entities
 {
-	internal class Vehicle
+	public class Vehicle
 	{
-		public int Id { get; set; }
-		public string ModleName { get; set; }
-		public string RegNumber { get; set; }
-		public string Color { get; set; }
+		//public int Id { get; set; }
+		public string ModelName { get; set; } = string.Empty;
+		public string RegNumber { get; set; } = string.Empty;
+		public string Color { get; set; } = string.Empty;
 		public DateTime ArrivalTime { get; set; }
 		//Foreign Key
 		public int DriverId { get; set; }
 		public int VehicleTypeId { get; set; }
 		//NAV Property
-		public Driver Driver { get; set; }
-		public VehicleTypes VehicleTypes { get; set; }	
+		public Driver Driver { get; set; } = new Driver();
+		public VehicleTypes VehicleTypes { get; set; } = new VehicleTypes();
 	}
 }
